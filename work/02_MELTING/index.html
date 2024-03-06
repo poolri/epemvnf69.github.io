@@ -1,0 +1,869 @@
+<!DOCTYPE HTML>
+<html lang='ko'>
+<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MELTING</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<!--<link rel="stylesheet" href="css/index.css">-->
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+	<style>
+	</style>
+
+	<script>
+
+		window.addEventListener('scroll', function() {
+			var sidebar = document.querySelector('.btn_side');
+			var scrollTotal = document.body.scrollHeight;
+			var scrollPoint = window.scrollY + window.innerHeight;
+
+			if (scrollTotal - scrollPoint > 320) {
+				sidebar.style.display = 'block';
+				}
+			else {
+				sidebar.style.display = 'none';
+			}
+		});
+
+//태블릿_메뉴
+
+		document.addEventListener('DOMContentLoaded', function() {
+		  const btnMenu = document.querySelector('.btn_menu');
+		  const header = document.querySelector('header');
+		  const btnNavs = document.querySelectorAll('nav .btn_nav');
+		  const navLis = document.querySelectorAll('nav ul > li');
+
+		  btnMenu.addEventListener('click', function() {
+			if (window.matchMedia('(min-width: 768px) and (max-width: 1024px)').matches) {
+			  if (header.classList.contains('on')) {
+				navLis.forEach(li => li.classList.remove('active'));
+			  }
+			  header.classList.toggle('on');
+			}
+		  });
+
+		  btnNavs.forEach(function(btnNav) {
+			btnNav.addEventListener('click', function(event) {
+			  const parentLi = event.currentTarget.parentNode;
+			  
+			  btnNavs.forEach(function(otherBtnNav) {
+				if (otherBtnNav !== btnNav) {
+				  otherBtnNav.parentNode.classList.remove('active');
+				}
+			  });
+			  
+			  parentLi.classList.toggle('active');
+			});
+		  });
+		});
+
+//모바일_메뉴
+
+		document.addEventListener('DOMContentLoaded', function() {
+		  const btnMenu = document.querySelector('.btn_menu');
+		  const header = document.querySelector('header');
+		  const btnNavs = document.querySelectorAll('nav .btn_nav');
+		  const navLis = document.querySelectorAll('nav ul > li');
+
+		  btnMenu.addEventListener('click', function() {
+			if (window.matchMedia('(max-width: 767px)').matches) {
+			  if (header.classList.contains('on')) {
+				navLis.forEach(li => li.classList.remove('active'));
+			  }
+			  header.classList.toggle('on');
+			}
+		  });
+
+		  btnNavs.forEach(function(btnNav) {
+			btnNav.addEventListener('click', function(event) {
+			  const parentLi = event.currentTarget.parentNode;
+			  
+			  btnNavs.forEach(function(otherBtnNav) {
+				if (otherBtnNav !== btnNav) {
+				  otherBtnNav.parentNode.classList.remove('active');
+				}
+			  });
+			  
+			  parentLi.classList.toggle('active');
+			});
+		  });
+		});
+
+
+
+
+	</script>
+
+ </head>
+
+ <body>
+
+
+	<header>
+
+		<div class="inner_wrap">
+
+<!--
+			<nav>
+				<ul class="clearfix">
+					<li>
+						<button class="btn_nav">ABOUT</button>
+						<ul class="sub">
+							<li><a href="#"><span>melting</span></a></li>
+							<li><a href="#"><span>location</span></a></li>
+							<li><a href="#"><span>news</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav">MENU</button>
+						<ul class="sub">
+							<li><a href="#"><span>cake</span></a></li>
+							<li><a href="#"><span>goods</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<span class="blind">logo</span>
+					</li>
+					<li>
+						<button class="btn_nav">COSTOM</button>
+						<ul class="sub">
+							<li><a href="#"><span>costom</span></a></li>
+							<li><a href="#"><span>others</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav">NOTICE</button>
+						<ul class="sub">
+							<li><a href="#"><span>notice</span></a></li>
+							<li><a href="#"><span>QnA</span></a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+-->
+			
+			<h1 class="logo"><a href="index.html">MELTING</a></h1>
+
+			<nav>
+				<div>
+					<ul class="_L">
+						<li>
+							<button class="btn_nav">ABOUT</button>
+							<ul class="sub">
+								<li><a href="#"><span>melting</span></a></li>
+								<li><a href="#"><span>location</span></a></li>
+								<li><a href="#"><span>news</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="btn_nav">MENU</button>
+							<ul class="sub">
+								<li><a href="#"><span>cake</span></a></li>
+								<li><a href="#"><span>goods</span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="logo_wrap">
+					<p class="logo_icon"><span class="blind">logo icon</span></p>
+				</div>
+
+				<div>
+					<ul class="_R">
+						<li>
+							<button class="btn_nav">COSTOM</button>
+							<ul class="sub">
+								<li><a href="#"><span>costom</span></a></li>
+								<li><a href="#"><span>others</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<button class="btn_nav">NOTICE</button>
+							<ul class="sub">
+								<li><a href="#"><span>notice</span></a></li>
+								<li><a href="#"><span>QnA</span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<button class="btn_menu"><span class="blind">menu button</span></button>
+
+		</div>
+	
+	</header>
+
+	<aside>
+	
+		<div class="btn_side">
+			<ul>
+				<li class="side_shop"><a href="#"><span class="blind">장바구니</span></a></li>
+				<li class="side_qna"><a href="#"><span class="blind">1:1 문의</span></a></li>
+				<li class="side_top"><a href="#"><span class="blind">top</span></a></li>
+			</ul>
+		</div>
+
+	</aside>
+
+	<section class="visual">
+
+		<h2 class="blind">visual</h2>
+
+		<div class="slides cur slides_01">
+			<picture>
+				<source srcset="images/melting_visual_D_01.jpg" media="(min-width: 1025px)">
+				<source srcset="images/melting_visual_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+				<source srcset="images/melting_visual_M_01.jpg" media="(max-width: 767px)">
+				<img src="images/melting_visual_D_01.jpg" alt="여러 종류의 케이크들이 진열되어 있는 사진">
+			</picture>
+		</div>
+
+		<div class="slides next slides_02">
+			<picture>
+				<source srcset="images/melting_visual_D_02.jpg" media="(min-width: 1025px)">
+				<source srcset="images/melting_visual_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+				<source srcset="images/melting_visual_M_02.jpg" media="(max-width: 767px)">
+				<img src="images/melting_visual_D_02.jpg" alt="미니 딸기 케이크들이 나열되어 있는 사진">
+			</picture>
+		</div>
+
+		<div class="slides prev slides_03">
+			<picture>
+				<source srcset="images/melting_visual_D_03.jpg" media="(min-width: 1025px)">
+				<source srcset="images/melting_visual_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+				<source srcset="images/melting_visual_M_03.jpg" media="(max-width: 767px)">
+				<img src="images/melting_visual_D_03.jpg" alt="여러 종류의 조각 케이크들과 미니 스콘들이 진열되어 있는 사진">
+			</picture>
+		</div>
+
+		<div class="pagination">
+			<button><span><span class="blind">slide 01 button</span></span></button><!--
+		 --><button><span><span class="blind">slide 02 button</span></span></button><!--
+		 --><button><span><span class="blind">slide 03 button</span></span></button>
+		</div>
+
+		<button class="dir_btns prev _L"><span><span class="blind">prev button</span></span></button>
+		<button class="dir_btns next _L"><span><span class="blind">next button</span></span></button>
+
+	</section>
+
+
+	<section class="pickup_time">
+
+		<h2 class="sub_title">Next-Day Pickup</h2>
+
+        <div class="inner_wrap">
+	
+			<div class="txt_wrap desk_txt tablet_txt">
+				<p><img src="images/pickup_time_icon.svg" alt="이미지 설명">다음날 즉시 픽업 가능&#33; 주문을 서두르세요&#33;</p>
+				<p>※ 당일 예약은 한정 수량이므로 조기 마감될 수 있습니다&#46;</p>
+			</div>
+			<div class="txt_wrap mobile_txt">
+				<p><img src="images/pickup_time_icon.svg" alt="이미지 설명">다음날 즉시 픽업 가능&#33;<br>주문을 서두르세요&#33;</p>
+				<p>※ 당일 예약은 한정 수량이므로<br>조기 마감될 수 있습니다&#46;</p>
+			</div>
+
+            <div class="time_wrap">
+                <div class="countdown">
+					<div class="countdown_section">
+						<p id="hours">00</p>
+						<p class="countdown_label">Hours</p>
+					</div>
+					<div class="countdown_section">
+						<p id="minutes">00</p>
+						<p class="countdown_label">Minutes</p>
+					</div>
+					<div class="countdown_section">
+						<p id="seconds">00</p>
+						<p class="countdown_label">Seconds</p>
+					</div>
+				</div>
+            </div>
+
+			<button class="reservation_btn"><span>예약하기</span></button>
+
+        </div>
+    </section>
+
+
+	<section class="best_menu">
+
+		<h2 class="sub_title">BEST MENU</h2>
+
+		<div class="inner_wrap">
+
+			<div class="slides cur item_wrap">
+				<div class="view_wrap cur">
+					<div class="item M_slides_01">
+						<a href="#">
+							<picture>
+								<source srcset="images/melting_cake_D_01.jpg" media="(min-width: 1025px)">
+								<source srcset="images/melting_cake_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+								<source srcset="images/melting_cake_M_01.jpg" media="(max-width: 767px)">
+								<img src="images/melting_cake_D_01.jpg" alt="Strewberry : 딸기가 듬뿍 올라간 어글리 케이크">
+							</picture>
+							<p class="cake_name"><span>Strewberry</span></p>
+						</a>
+					</div>
+					<div class="item M_slides_02">
+						<a href="#">
+							<picture>
+								<source srcset="images/melting_cake_D_02.jpg" media="(min-width: 1025px)">
+								<source srcset="images/melting_cake_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+								<source srcset="images/melting_cake_M_02.jpg" media="(max-width: 767px)">
+								<img src="images/melting_cake_D_02.jpg" alt="Ra-cherry : 라즈베리로 체리 장식이 되어있는 생크림 케이크">
+							</picture>
+							<p class="cake_name"><span>Ra-cherry</span></p>
+						</a>
+					</div>
+				</div>
+
+				<div class="view_wrap">
+					<div class="item M_slides_01">
+						<a href="#">
+							<picture>
+								<source srcset="images/melting_cake_D_03.jpg" media="(min-width: 1025px)">
+								<source srcset="images/melting_cake_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+								<source srcset="images/melting_cake_M_03.jpg" media="(max-width: 767px)">
+								<img src="images/melting_cake_D_03.jpg" alt="B-ictorian : 식용 꽃과 블루베리로 장식한 블루베리 빅토리안 케이크">
+							</picture>
+							<p class="cake_name"><span>B-ictorian</span></p>
+						</a>
+					</div>
+					<div class="item M_slides_02">
+						<a href="#">
+							<picture>
+								<source srcset="images/melting_cake_D_04.jpg" media="(min-width: 1025px)">
+								<source srcset="images/melting_cake_T_04.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+								<source srcset="images/melting_cake_M_04.jpg" media="(max-width: 767px)">
+								<img src="images/melting_cake_D_04.jpg" alt="lilac chiffon : 라일락 꽃잎과 아이싱 시럽으로 장식한 쉬폰 케이크">
+							</picture>
+							<p class="cake_name"><span>lilac chiffon</span></p>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="slides next item_wrap">
+				<div class="view_wrap">
+					<div class="item M_slides_01">
+						<a href="#">
+							<picture>
+								<source srcset="images/melting_cake_D_05.jpg" media="(min-width: 1025px)">
+								<source srcset="images/melting_cake_T_05.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+								<source srcset="images/melting_cake_M_05.jpg" media="(max-width: 767px)">
+								<img src="images/melting_cake_D_05.jpg" alt="Berrytorian : 바닐라빈이 들어간 버터크림과 딸기로 장식한 빅토리안 케이크">
+							</picture>
+							<p class="cake_name"><span>Berrytorian</span></p>
+						</a>
+					</div>
+					<div class="item M_slides_02">
+						<a href="#">
+							<picture>
+								<source srcset="images/melting_cake_D_06.jpg" media="(min-width: 1025px)">
+								<source srcset="images/melting_cake_T_06.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+								<source srcset="images/melting_cake_M_06.jpg" media="(max-width: 767px)">
+								<img src="images/melting_cake_D_06.jpg" alt="Lemontorian : 레몬 절임과 레몬 아이싱, 달콤한 크림으로 장식한 빅토리안 케이크">
+							</picture>
+							<p class="cake_name"><span>Lemontorian</span></p>
+						</a>
+					</div>
+				</div>
+
+				<div class="view_wrap">
+					<div class="item M_slides_01">
+						<a href="#">
+							<picture>
+								<source srcset="images/melting_cake_D_07.jpg" media="(min-width: 1025px)">
+								<source srcset="images/melting_cake_T_07.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+								<source srcset="images/melting_cake_M_07.jpg" media="(max-width: 767px)">
+								<img src="images/melting_cake_D_07.jpg" alt="Berry crepe : 바닐라빈 크림과 블루베리로 맛을 낸 크레이프 케이크">
+							</picture>
+							<p class="cake_name"><span>Berry crepe</span></p>
+						</a>
+					</div>
+					<div class="item M_slides_02">
+						<a href="#">
+							<picture>
+								<source srcset="images/melting_cake_D_08.jpg" media="(min-width: 1025px)">
+								<source srcset="images/melting_cake_T_08.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+								<source srcset="images/melting_cake_M_08.jpg" media="(max-width: 767px)">
+								<img src="images/melting_cake_D_08.jpg" alt="Lemon Berry : 레몬 절임과 블루베리로 장식한 생크림 케이크">
+							</picture>
+							<p class="cake_name"><span>Lemon Berry</span></p>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="pagination">
+				<button><span><span class="blind">slide 01 button</span></span></button><!--
+			 --><button><span><span class="blind">slide 02 button</span></span></button><!--
+			 --><button class="mobile_slide"><span><span class="blind">slide 02 button</span></span></button><!--
+			 --><button class="mobile_slide"><span><span class="blind">slide 02 button</span></span></button>
+			</div>
+
+			<button class="dir_btns prev _S"><span><span class="blind">prev button</span></span></button>
+			<button class="dir_btns next _S"><span><span class="blind">next button</span></span></button>
+
+		</div>
+	</section>
+
+
+
+	<section class="info_section">
+
+		<h2 class="sub_title">MELTING is?</h2>
+
+		<div class="inner_wrap">
+
+			<div class="slides cur">
+				<div class="info_wrap">
+					<picture>
+						<source srcset="images/melting_info_D_01.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_info_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_info_M_01.jpg" media="(max-width: 767px)">
+						<img src="images/melting_info_D_01.jpg" alt="과일 케이크를 장식하는 여자 사진">
+					</picture>
+					<div class="info_desc">
+						<h3>" Naturally Fresh ! "</h3>
+						<p>인공 보존제나 향료를 사용하지 않은<br>자연 그대로의 단맛을 즐겨보세요.</p>
+						<p>100% 동물성 크림과 프랑스 고메 버터로<br>맛의 축제를 경험하실 수 있습니다.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="slides next">
+				<div class="info_wrap">
+					<picture>
+						<source srcset="images/melting_info_D_02.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_info_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_info_M_02.jpg" media="(max-width: 767px)">
+						<img src="images/melting_info_D_02.jpg" alt="초콜릿 케이크를 장식하는 여자 사진">
+					</picture>
+					<div class="info_desc">
+						<h3>" Heart Melt Flavors ! "</h3>
+						<p>멜팅은 마음을 녹일 맛의 마법을 선사합니다.</p>
+						<p>부드러운 크림과 사르르 녹는 초콜릿, 신선한 과일.</p>
+						<p>멜팅의 마법과 당신이 만나<br>소중한 사람들에게 잊지 못할 추억이 됩니다.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="slides prev">
+				<div class="info_wrap">
+					<picture>
+						<source srcset="images/melting_info_D_03.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_info_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_info_M_03.jpg" media="(max-width: 767px)">
+						<img src="images/melting_info_D_03.jpg" alt="빅토리안 케이크를 장식하는 여자 사진">
+					</picture>
+					<div class="info_desc">
+						<h3>" Make Special ! "</h3>
+						<p>특별한 순간을 더욱 빛나게 만들어 줄<br>특별한 디자인과 특별한 맛을 느껴보세요.</p>
+						<p>멜팅에서 마음껏 취향과 오더를 반영하여<br>당신만의 스토리를 담은 케이크를 만나보세요.</p>
+					</div>
+				</div>
+			</div>
+
+			<button class="dir_btns prev _S"><span><span class="blind">prev button</span></span></button>
+			<button class="dir_btns next _S"><span><span class="blind">next button</span></span></button>
+
+		</div>
+
+	</section>
+
+
+
+	<section class="others">
+
+		<h2 class="sub_title">OTHER's CHOICES</h2>
+
+		<div class="inner_wrap">
+
+			<div class="review_wrap">
+
+				<div class="view_wrap cur slides">
+					<div class="review_01">
+						<picture>
+							<source srcset="images/melting_review_D_01.jpg" media="(min-width: 1025px)">
+							<source srcset="images/melting_review_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/melting_review_M_01.jpg" media="(max-width: 767px)">
+							<img src="images/melting_review_D_01.jpg" alt="부케 모양 케이크">
+						</picture>
+						<div class="others_txt">
+							<div class="txt_wrap">
+								<p class="star_wrap">★★★★★</p>
+								<p class="review_name">몽글몽글(mongg***7)</p>
+								<p class="review_txt">엄마 생일 선물로 준비해봤어요. 이런 스타일도 해주실 줄은 몰랐는데 …</p>
+							</div>
+						</div>
+					</div>
+					<div class="review_02">
+						<picture>
+							<source srcset="images/melting_review_D_02.jpg" media="(min-width: 1025px)">
+							<source srcset="images/melting_review_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/melting_review_M_02.jpg" media="(max-width: 767px)">
+							<img src="images/melting_review_D_02.jpg" alt="발레코어 디자인 케이크">
+						</picture>
+						<div class="others_txt">
+							<div class="txt_wrap">
+								<p class="star_wrap">★★★★★</p>
+								<p class="review_name">마담물랑(mulra***7)</p>
+								<p class="review_txt">달콤하고 꾸덕한 버터크림과 화려하지 않은 …</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="view_wrap slides">
+					<div class="review_03">
+						<picture>
+							<source srcset="images/melting_review_D_03.jpg" media="(min-width: 1025px)">
+							<source srcset="images/melting_review_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/melting_review_M_03.jpg" media="(max-width: 767px)">
+							<img src="images/melting_review_D_03.jpg" alt="하트 데코레이션 케이크">
+						</picture>
+						<div class="others_txt">
+							<div class="txt_wrap">
+								<p class="star_wrap">★★★★★</p>
+								<p class="review_name">버터컵(butte***p)</p>
+								<p class="review_txt">이 디자인이 가능할 줄 몰랐어요! 너무너무 귀여워요 ㅠㅠ …</p>
+							</div>
+						</div>
+					</div>
+					<div class="review_04">
+						<picture>
+							<source srcset="images/melting_review_D_04.jpg" media="(min-width: 1025px)">
+							<source srcset="images/melting_review_T_04.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/melting_review_M_04.jpg" media="(max-width: 767px)">
+							<img src="images/melting_review_D_04.jpg" alt="생일 파티 케이크">
+						</picture>
+						<div class="others_txt">
+							<div class="txt_wrap">
+								<p class="star_wrap">★★★★★</p>
+								<p class="review_name">민준마망(minju***ma)</p>
+								<p class="review_txt">친구 생일이라 특별한 케이크를 준비해주고 싶어서 주문 …</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+			<!-- <div class="slides cur review_wrap_01">
+				<div class="review_01">
+					<picture>
+						<source srcset="images/melting_review_D_01.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_review_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_review_M_01.jpg" media="(max-width: 767px)">
+						<img src="images/melting_review_D_01.jpg" alt="부케 모양 케이크">
+					</picture>
+					<div class="others_txt">
+						<div class="txt_wrap">
+							<p class="star_wrap">★★★★★</p>
+							<p class="review_name">몽글몽글(mongg***7)</p>
+							<p class="review_txt">엄마 생일 선물로 준비해봤어요. 이런 스타일도 해주실 줄은 몰랐는데 …</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="review_02">
+					<picture>
+						<source srcset="images/melting_review_D_02.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_review_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_review_M_02.jpg" media="(max-width: 767px)">
+						<img src="images/melting_review_D_02.jpg" alt="발레코어 디자인 케이크">
+					</picture>
+					<div class="others_txt">
+						<div class="txt_wrap">
+							<p class="star_wrap">★★★★★</p>
+							<p class="review_name">마담물랑(mulra***7)</p>
+							<p class="review_txt">달콤하고 꾸덕한 버터크림과 화려하지 않은 …</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="slides next review_wrap_02">
+				<div class="review_03">
+					<picture>
+						<source srcset="images/melting_review_D_03.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_review_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_review_M_03.jpg" media="(max-width: 767px)">
+						<img src="images/melting_review_D_03.jpg" alt="하트 데코레이션 케이크">
+					</picture>
+					<div class="others_txt">
+						<div class="txt_wrap">
+							<p class="star_wrap">★★★★★</p>
+							<p class="review_name">버터컵(butte***p)</p>
+							<p class="review_txt">이 디자인이 가능할 줄 몰랐어요! 너무너무 귀여워요 ㅠㅠ …</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="review_04">
+					<picture>
+						<source srcset="images/melting_review_D_04.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_review_T_04.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_review_M_04.jpg" media="(max-width: 767px)">
+						<img src="images/melting_review_D_04.jpg" alt="생일 파티 케이크">
+					</picture>
+					<div class="others_txt">
+						<div class="txt_wrap">
+							<p class="star_wrap">★★★★★</p>
+							<p class="review_name">민준마망(minju***ma)</p>
+							<p class="review_txt">친구 생일이라 특별한 케이크를 준비해주고 싶어서 주문 …</p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+
+			<div class="pagination">
+				<button><span><span class="blind">slide 01 button</span></span></button><!--
+			 --><button><span><span class="blind">slide 02 button</span></span></button>
+			</div>
+
+			<button class="dir_btns prev _S"><span><span class="blind">prev button</span></span></button>
+			<button class="dir_btns next _S"><span><span class="blind">next button</span></span></button>
+
+		</div>
+
+	</section>
+
+
+
+	<section class="md_goods">
+
+		<h2 class="sub_title">MD GOODs</h2>
+
+		<div class="inner_wrap">
+
+			<div class="slides cur item_01">
+				<a href="#">
+					<picture>
+						<source srcset="images/melting_md_D_01.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_md_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_md_M_01.jpg" media="(max-width: 767px)">
+						<img src="images/melting_md_D_01.jpg" alt="빈티지 디자인의 유리 항아리">
+					</picture>
+					<p class="goods_name">Vintage jar</p>
+				</a>
+
+				<a href="#">
+					<picture>
+						<source srcset="images/melting_md_D_02.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_md_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_md_M_02.jpg" media="(max-width: 767px)">
+						<img src="images/melting_md_D_02.jpg" alt="작은 곰인형 모양의 자석">
+					</picture>
+					<p class="goods_name">Magnet bear</p>
+				</a>
+
+				<a href="#">
+					<picture>
+						<source srcset="images/melting_md_D_03.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_md_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_md_M_03.jpg" media="(max-width: 767px)">
+						<img src="images/melting_md_D_03.jpg" alt="비비드하지만 빈티지한 색감의 라인이 들어간 투명 pvc 가방">
+					</picture>
+					<p class="goods_name">Clear bag</p>
+				</a>
+			</div>
+
+			<div class="slides next item_02">
+				<a href="#">
+					<picture>
+						<source srcset="images/melting_md_D_04.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_md_T_04.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_md_M_04.jpg" media="(max-width: 767px)">
+						<img src="images/melting_md_D_04.jpg" alt="분홍색 풍선 강아지 펜던트가 달린 키링">
+					</picture>
+					<p class="goods_name">Key ring</p>
+				</a>
+
+				<a href="#">
+					<picture>
+						<source srcset="images/melting_md_D_05.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_md_T_05.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_md_M_05.jpg" media="(max-width: 767px)">
+						<img src="images/melting_md_D_05.jpg" alt="쿠션 모양 도자기 받침이 있는 머그컵">
+					</picture>
+					<p class="goods_name">Mug cup</p>
+				</a>
+
+				<a href="#">
+					<picture>
+						<source srcset="images/melting_md_D_06.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_md_T_06.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_md_M_06.jpg" media="(max-width: 767px)">
+						<img src="images/melting_md_D_06.jpg" alt="흘러내리는 듯한 모양의 캔들">
+					</picture>
+					<p class="goods_name">Candle</p>
+				</a>
+			</div>
+
+			<div class="slides prev item_03">
+				<a href="#">
+					<picture>
+						<source srcset="images/melting_md_D_07.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_md_T_07.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_md_M_07.jpg" media="(max-width: 767px)">
+						<img src="images/melting_md_D_07.jpg" alt="비비드한 색감의 아이스박스">
+					</picture>
+					<p class="goods_name">Ice box</p>
+				</a>
+
+				<a href="#">
+					<picture>
+						<source srcset="images/melting_md_D_08.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_md_T_08.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_md_M_08.jpg" media="(max-width: 767px)">
+						<img src="images/melting_md_D_08.jpg" alt="빈티지 디자인의 틴케이스">
+					</picture>
+					<p class="goods_name">Tin case</p>
+				</a>
+
+				<a href="#">
+					<picture>
+						<source srcset="images/melting_md_D_09.jpg" media="(min-width: 1025px)">
+						<source srcset="images/melting_md_T_09.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/melting_md_M_09.jpg" media="(max-width: 767px)">
+						<img src="images/melting_md_D_09.jpg" alt="우유병 모양의 텀블러">
+					</picture>
+					<p class="goods_name">Tumbler</p>
+				</a>
+			</div>
+
+			<div class="pagination">
+				<button><span><span class="blind">slide 01 button</span></span></button><!--
+			 --><button><span><span class="blind">slide 02 button</span></span></button><!--
+			 --><button><span><span class="blind">slide 02 button</span></span></button>
+			</div>
+
+			<button class="dir_btns prev _S"><span><span class="blind">prev button</span></span></button>
+			<button class="dir_btns next _S"><span><span class="blind">next button</span></span></button>
+		
+		</div>
+
+	</section>
+
+
+
+	<section class="news">
+
+		<h2 class="sub_title">MELTING NEW's</h2>
+
+		<div class="inner_wrap">
+
+			<div class="news_wrap">
+				<div class="slides cur news_01">
+					<a href="#">
+						<picture>
+							<source srcset="images/MELTING_news_D_01.jpg" media="(min-width: 1025px)">
+							<source srcset="images/MELTING_news_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/MELTING_news_M_01.jpg" media="(max-width: 767px)">
+							<img src="images/MELTING_news_D_01.jpg" alt="제빵 반죽을 하는 사람">
+						</picture>
+						<div class="txt_wrap">
+							<span class="talk_icon_01"><span class="blind">"</span></span>
+							<p class="news_txt desk_txt tablet_txt">창의력과 맛을 극대화하는 케이크 제작 대회…<br>…많은 참가자들이 독특하고 혁신적인 케이크를<br>선보이는 대회에서 베이커리 '멜팅'이  우승…</p>
+							<p class="news_txt mobile_txt">창의력과 맛을 극대화하는<br>케이크 제작 대회…<br>…많은 참가자들이 독특하고 혁신적인<br>케이크를 선보이는 대회에서<br>베이커리 '멜팅'이  우승…</p>
+							<p class="news_date">베이커리 일보│2024.02.06</p>
+							<span class="talk_icon_02"><span class="blind">"</span></span>
+						</div>
+					</a>
+				</div>
+
+				<div class="slides next news_02">
+					<a href="#">
+						<picture>
+							<source srcset="images/MELTING_news_D_02.jpg" media="(min-width: 1025px)">
+							<source srcset="images/MELTING_news_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/MELTING_news_M_02.jpg" media="(max-width: 767px)">
+							<img src="images/MELTING_news_D_02.jpg" alt="유기농 밀가루와 지역에서 생산된 과일로 만든 사과 파이">
+						</picture>
+						<div class="txt_wrap">
+							<span class="talk_icon_01"><span class="blind">"</span></span>
+							<p class="news_txt desk_txt tablet_txt">유기농 밀가루, 지역에서 생산된 계란과 우유,<br>그리고 계절별 과일 등을 지역 농장과 공급 체결하여<br>지역 상생에 기여한 '멜팅'을…</p>
+							<p class="news_txt mobile_txt">유기농 밀가루, 지역에서 생산된 계란과 우유, 그리고 계절별 과일 등을<br>지역 농장과 공급 체결하여 지역 상생에 기여한 '멜팅'을…</p>
+							<p class="news_date">베이커리 일보│2023.12.01</p>
+							<span class="talk_icon_02"><span class="blind">"</span></span>
+						</div>
+					</a>
+				</div>
+
+				<div class="slides prev news_03">
+					<a href="#">
+						<picture>
+							<source srcset="images/MELTING_news_D_03.jpg" media="(min-width: 1025px)">
+							<source srcset="images/MELTING_news_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/MELTING_news_M_03.jpg" media="(max-width: 767px)">
+							<img src="images/MELTING_news_D_03.jpg" alt="베이킹을 하고 있는 남자">
+						</picture>
+						<div class="txt_wrap">
+							<span class="talk_icon_01"><span class="blind">"</span></span>
+							<p class="news_txt desk_txt tablet_txt">'멜팅'의 성공 비결, 대표와의 면담.<br>'우리의 목표는 제과제빵에 새로운 바람을 불어넣어<br>모든 세대가 같은 맛을 공유하는 것…'</p>
+							<p class="news_txt mobile_txt">'멜팅'의 성공 비결, 대표와의 면담.<br>'우리의 목표는 제과제빵에<br>새로운 바람을 불어넣어 모든 세대가<br>같은 맛을 공유하는 것…'</p>
+							<p class="news_date">베이커리 일보│2023.05.16</p>
+							<span class="talk_icon_02"><span class="blind">"</span></span>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<button class="dir_btns prev _S"><span><span class="blind">prev button</span></span></button>
+			<button class="dir_btns next _S"><span><span class="blind">next button</span></span></button>
+		
+		</div>
+
+	</section>
+
+
+	
+	<footer>
+
+		<div class="inner_wrap">
+
+			<div class="logo"><a href="index.html"><span class="blind">MELTING</span></a></div>
+			
+			<!--<a href="#"><img src="images/footer_logo_icon.svg" alt="MELTING LOGO"></a>-->
+
+			<div class="footer_sns">
+				<a href="https://www.youtube.com/" class="youtube"><span class="blind">youtube</span></a><!--
+			 --><a href="https://www.twitter.com/" class="twitter"><span class="blind">twitter</span></a><!--
+			 --><a href="https://www.instagram.com/" class="instargram"><span class="blind">instargram</span></a>
+			</div>
+
+			<div class="footer_txt">
+				<div class="footer_txt_L">
+					<div class="desc_01 desk_txt tablet_txt mobile_txt">
+						<p class="f_time">예약된 케이크 픽업 완료시 조기 종료<br>13:00 ~ 19:30<br>휴무일: 일, 월</p>
+						<p class="f_roca">부산광역시 해운대구 센텀중앙로 90</p>
+						<p class="f_talk">톡톡문의 : 멜팅</p>
+						<p class="f_phone">0507-1700-4485</p>
+						<p class="f_message">melting__@naver.com</p>
+					</div>
+				</div>
+
+				<div class="footer_txt_R">
+					<div class="desc_03 desk_txt tablet_txt">
+						<p>디자인케이크 전문점</p>
+						<p>사업자등록번호: 726-28-01013</p>
+						<p>통신판매번호: 2020-부산해운대-0352</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+
+
+ </body>
+
+</html>

@@ -1,0 +1,55 @@
+ <!DOCTYPE HTML>
+<html lang='ko'>
+<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CONSTRUCTION page</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/construction_common.css">
+
+	<style>
+	</style>
+
+	<script>
+
+		document.addEventListener('DOMContentLoaded', function() {
+
+			var backButton = document.querySelector('.back_btn a');
+
+			backButton.addEventListener('mouseover', function() {
+				this.textContent = 'GO BACK !';
+			});
+
+			backButton.addEventListener('mouseout', function() {
+				this.textContent = 'GO BACK?';
+			});
+		});
+
+	</script>
+
+ </head>
+
+ <body>
+
+	<section>
+
+	
+		<div class="inner_wrap">
+			<div class="inner_box">
+				<h1><span class="frist">&#40;</span>&#32;<span class="middle">construction&#32;&#183;&#183;&#183;</span>&#32;<span class="last">&#125;</span></h1>
+
+				<div class="txt_box desc_txt tablet_txt">
+					<p>This page is currently under construction.</p>
+					<p>このページは現在建設中です。</p>
+					<p>이 페이지는 현재 건설 중입니다.</p>
+				</div>
+
+				<div class="back_btn"><a href="javascript:history.back()">GO BACK?</a></div>
+			</div>
+		</div>
+		
+	</section>
+  
+ </body>
+
+</html>

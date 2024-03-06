@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="10" viewBox="0 0 42 10">
+  <g id="menu_btn" transform="translate(-646 -45)">
+    <circle id="타원_2" data-name="타원 2" cx="5" cy="5" r="5" transform="translate(646 45)" fill="#8f1300"/>
+    <circle id="타원_3" data-name="타원 3" cx="5" cy="5" r="5" transform="translate(678 45)" fill="#8f1300"/>
+    <circle id="타원_4" data-name="타원 4" cx="5" cy="5" r="5" transform="translate(662 45)" fill="#8f1300"/>
+  </g>
+</svg>

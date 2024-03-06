@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+/* ==========================================
+=============== common.css ==================
+================ (The Namu) =================
+========================================== */
+
+/* ######## font-face(start) ######## */
+
+/* noto-sans-kr-300 - cyrillic_korean_latin */
+@font-face {
+  font-family: 'NotoSansKR_300';
+  src: url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-300.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* noto-sans-kr-regular - cyrillic_korean_latin */
+@font-face {
+  font-family: 'NotoSansKR_400';
+  src: url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* noto-sans-kr-600 - cyrillic_korean_latin */
+@font-face {
+  font-family: 'NotoSansKR_600';
+  src: url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-600.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* noto-sans-kr-900 - cyrillic_korean_latin */
+@font-face {
+  font-family: 'NotoSansKR_900';
+  src: url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-900.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* anton-regular - latin */
+@font-face {
+  font-family: 'Anton';
+  src: url('../fonts/anton-v25-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/anton-v25-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* bungee-regular - latin */
+@font-face {
+  font-family: 'Bungee';
+  src: url('../fonts/bungee-v13-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/bungee-v13-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* ######### font-face(end) ######### */
+
+
+	.inner_wrap { position: relative; width: 100%; max-width: 1920px; margin: 0 auto; text-align: center; }
+	.frist { font-family: "Anton"; }
+	.last { font-family: "Anton"; }
+	.middle { font-family: "Bungee"; }
+
+	section .inner_wrap p { font-family: "NotoSansKR_400"; }
+	
+
+/* ---------- Desktop (start) ---------- */
+
+
+@media screen and (min-width: 1025px) {
+
+	body { font-size: 16px; }
+
+	section .inner_wrap h1 .frist { font-size: 5em; vertical-align: middle; padding-right: 0.2em; }
+	section .inner_wrap h1 .last { font-size: 5em; vertical-align: middle; padding-left: 0.2em; }
+	section .inner_wrap h1 .middle { font-size: 4em; vertical-align: middle; }
+
+	section .inner_wrap img { display: block; position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 100%; max-width: 100px; max-height: 100px; object-fit: contain; }
+
+	section .inner_wrap p { margin-top: 1em; }
+
+}
+
+
+/* ----------- Desktop (end) ----------- */
+
+
+/* ---------- Tablet (start) ---------- */
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	body { font-size: 14px; }
+
+}
+
+
+/* ----------- Tablet (end) ----------- */
+
+
+/* ---------- Mobile (start) ---------- */
+
+
+@media screen and (max-width: 767px) {
+	
+	body { font-size: 14px; }
+
+}
+
+
+/* ----------- Mobile (end) ----------- */

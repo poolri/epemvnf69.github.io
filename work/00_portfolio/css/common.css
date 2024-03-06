@@ -1,0 +1,319 @@
+@charset "utf-8";
+
+/* ==========================================
+=============== common.css ==================
+=============== (PORTFOLIO) =================
+========================================== */
+
+/* ######## font-face(start) ######## */
+
+/* titan-one-regular - latin */
+@font-face {
+  font-family: 'titan_one';
+  src: url('../font/titan-one-v15-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('../font/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Medium';
+    src: url('../font/SpoqaHanSansNeo-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Bold';
+    src: url('../font/SpoqaHanSansNeo-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Impact';
+    src: url('../font/Impact.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Anton-Regular';
+    src: url('../font/Anton-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MyriadPro-BlackCondIt';
+    src: url('../font/MyriadPro-BlackCondIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BlackSemiCnIt';
+    src: url('../font/MyriadPro-BlackSemiCnIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BlackSemiExt';
+    src: url('../font/MyriadPro-BlackSemiExt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-Bold';
+    src: url('../font/MyriadPro-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BoldSemiCnIt';
+    src: url('../font/MyriadPro-BoldSemiCnIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('../font/MyriadPro-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-Semibold';
+    src: url('../font/MyriadPro-Semibold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-SemiExt';
+    src: url('../font/MyriadPro-SemiExt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BlackIt';
+    src: url('../font/MyriadPro-BlackIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BoldSemiExt';
+    src: url('../font/MyriadPro-BoldSemiExt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BoldSemiExtIt';
+    src: url('../font/MyriadPro-BoldSemiExtIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BlackSemiExtIt';
+    src: url('../font/MyriadPro-BlackSemiExtIt.otf') format('truetype');
+}
+
+
+/* ######### font-face(end) ######### */
+
+
+	body { font-family: "SpoqaHanSansNeo-Medium"; width: 100%; text-align: center; color: #2C3A54; }
+	section { position: relative; width: 100%; }
+	.inner_wrap { overflow: hidden; position: relative; width: 100%; max-width: 1320px; margin: 0 auto; }
+
+	.sub_title { height: 80px; font-family: "Impact"; font-size: 3.5em; letter-spacing: 1px; z-index: 20; text-transform: uppercase; }
+	.sub_title span { font-family: "SpoqaHanSansNeo-Medium"; vertical-align: middle; padding: 0 0.3em; }
+
+	
+	.btn_style_01 { position: relative; display: inline-block; font-family: "MyriadPro-BlackCondIt"; font-size: 1.5em; width: 7em; border-bottom: 2px solid #fff; text-align: center; }
+	.btn_style_01.active { color: #FFAA00; border-bottom: 2px solid #FFAA00; }
+	.btn_style_01.active::before { content: ""; display: block; width: 20px; height: 15px; background: url("../images/portfolio_index_project_active_icon.svg") no-repeat center; background-size: cover; position: absolute; left: -25%; top: 50%; transform: translateY(-50%); }
+
+	.btn_style_02 { display: inline-block; font-family: "MyriadPro-BlackCondIt"; font-size: 1.5em; color: #FFAA00; width: 7em; height: 1.5em; background: #fff; text-align: center; overflow: hidden; border-radius: 999px 0 999px 999px;     line-height: 1.6; }
+
+
+	.pagination button { padding: 10px; line-height: 0; }
+	.pagination button > span { display: inline-block; position: relative; left: 50%; width: 14px; height: 14px; transform: translateX(-50%); border-radius: 999999999999px; background: #FFF; transition: all 0.2s linear; }
+	.pagination button.active > span { background: #FFAA00; width: 40px; }
+
+
+	.dir_btns > span { background: #FFF; }
+	.dir_btnss.active > span { background: #FFAA00; }
+	.dir_btns[class ~= "prev"] > span { clip-path: polygon(50% 0%, 15% 50%, 50% 100%, 0% 50%); }
+	.dir_btns[class ~= "next"] > span { clip-path: polygon(50% 0%, 15% 50%, 50% 100%, 0% 50%); transform: scaleX(-1); }
+
+
+
+	
+
+/* ---------- Desktop (start) ---------- */
+
+
+@media screen and (min-width: 1025px) {
+
+	section { padding: 80px 0; }
+
+
+	header { position: fixed; right: 5%; top: 50%; z-index: 100; transform: translateY(-50%); }
+
+	nav ul { width: 3em; font-family: "MyriadPro-BlackIt"; }
+	nav ul button { display: inline-block; position: relative; width: 100%; height: 2em; }
+	nav ul button::before { content: ""; display: inline-block; position: absolute; left: 50%; top: 50%; z-index: 2; transform: translate(-50%, -50%); width: 20px; height: 15px; background: url("../images/portfolio_index_header_nav_icon.svg") no-repeat center; background-size: contain; }
+	nav ul button:hover::before { background: url("../images/portfolio_index_header_nav_icon_active.svg") no-repeat center; background-size: contain; }
+	nav ul button.active::before { background: url("../images/portfolio_index_header_nav_icon_active.svg") no-repeat center; background-size: contain; }
+	nav ul button > .text { display: inline-block; position: absolute; right: 0; top: 50%; z-index: 1; transform: translateY(-50%); color: #2C3A54; font-size: 1em; text-align: right; opacity: 0; white-space: nowrap; }
+	nav ul button:hover > .text { right: 100%; opacity: 1; transition: right 0.3s, opacity 0.3s; }
+
+
+
+	/*main*/
+
+	section.main_visual { background: #424D5E; font-family: "Impact"; height: 100vh; }
+	section.main_visual .main_container { display: flex; flex-direction: column; align-items: center; width: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+	section.main_visual .main_container p { font-family: "MyriadPro-SemiExt";  color: #fff; font-size: 1.5em; }
+	section.main_visual h1 { font-size: 8em; color: #FBB040; line-height: 1; }
+	section.main_visual h1 .logo_talk { font-size: 1.5em; font-family: "MyriadPro-Bold"; padding: 0 0.3em; }
+	section.main_visual h1 .logo_emoji { font-size: 0.8em; font-family: "SpoqaHanSansNeo-Regular"; color: #fff; vertical-align: middle; }
+	section.main_visual h2 { font-family: "MyriadPro-BlackIt"; display: flex; flex-direction: column; width: 40%; color: #fff; font-size: 6.5em; line-height: 1; text-transform: uppercase; }
+	section.main_visual h2 .F_name { position: relative; margin-right: auto; font-family: "MyriadPro-BlackIt"; }
+	section.main_visual h2 .F_name::after { content: "#POTOSHOP #ILLUSTRATOR #FIGMA"; font-family: "MyriadPro-BlackIt"; font-size: 0.1em; display: block; width: 100%; position: absolute; bottom: 10%; left: 100%; text-align: left; }
+	section.main_visual h2 .L_name { position: relative; margin-left: auto; color: transparent; -webkit-text-stroke: 1px #fff; }
+	section.main_visual h2 .L_name::after { content: "#HTML #CSS #JavaScript"; font-size: 0.1em; display: block; width: 100%; position: absolute; bottom: 10%; left: 100%; color: #fff; -webkit-text-stroke: 0px; text-align: left; }
+
+
+	/*section.profile_01*/
+
+	section.profile_01 { display: flex; flex-direction: column; flex-wrap: wrap; }
+	
+	section.profile_01 .inner_wrap { flex: 1; display: flex; flex-wrap: wrap; flex-direction: column; gap: 50px; }
+	section.profile_01 .inner_wrap .profile_info { display: flex; gap: 100px; }
+	section.profile_01 .inner_wrap .profile_info > div { flex: 1; position: relative; width: 100%; max-height: 400px; background: #424D5E; overflow: hidden; }
+	section.profile_01 .inner_wrap .profile_info .photo_info { border-radius: 999px 999px 0 999px; }
+	section.profile_01 .inner_wrap .profile_info .photo_info img { display: block; width: 100%; height: 100%; object-fit: contain; }
+	section.profile_01 .inner_wrap .profile_info .txt_info { border-radius: 0 999px 999px 999px; }
+	section.profile_01 .txt_info > dl { position: absolute; width: 70%; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; }
+	section.profile_01 .txt_info > dl dt { font-family: "MyriadPro-BoldSemiExt"; font-size: 1.5em; font-weight: bold; padding-bottom: 0.5em; }
+	section.profile_01 .txt_info > dl dd { padding-bottom: 1em; }
+
+	section.profile_01 h3 { color: #2C3A54; font-family: "Impact"; font-size: 3em; letter-spacing: 1.5em; }
+	section.profile_01 .identity_info { display: flex; flex-wrap: wrap; justify-content: center; }
+	section.profile_01 .identity_info dl { width: 30%; }
+	section.profile_01 .identity_info dl dt { position: relative; }
+	section.profile_01 .identity_info dl dt > span { overflow: hidden; display: block; width: 13em; height: 3em; background: #424D5E; border-radius: 999px; margin: auto 2em 2em; line-height: 3; color: #fff; font-family: "SpoqaHanSansNeo-Bold"; font-size: 1.5em; }
+	section.profile_01 .identity_info dl dt > span::before { content: ""; width: 0; height: 0; position: absolute; left: 50%; top: 100%; transform: translate(-50%, -50%); border: 20px solid transparent; border-bottom-width: 0; border-top-color: #424D5E; }
+	.eng_txt { padding-left: 0.2em; font-family: "Impact"; }
+	section.profile_01 .identity_info dl dd { width: 65%; margin: auto; }
+	section.profile_01 .identity_info dl dd > span { color: #FF9600; font-weight: bold; }
+
+
+	/*section.profile_02*/
+
+	section.profile_02 { display: flex; flex-wrap: wrap; flex-direction: column; gap: 50px; }
+
+	section.profile_02 .inner_wrap { display: flex; flex-direction: column; gap: 50px; }
+	section.profile_02 .inner_wrap .tool_icon { display: flex; gap: 80px; justify-content: center; }
+	section.profile_02 .tool_icon .html_icon { display: block; width: 64px; height: 64px; background: url("../images/portfolio_index_project_icon_html.svg") no-repeat center; background-size: cover; }
+	section.profile_02 .tool_icon .css_icon { display: block; width: 64px; height: 64px; background: url("../images/portfolio_index_project_icon_css.svg") no-repeat center; background-size: cover; }
+	section.profile_02 .tool_icon .js_icon { display: block; width: 64px; height: 64px; background: url("../images/portfolio_index_project_icon_js.svg") no-repeat center; background-size: cover; }
+	section.profile_02 .tool_icon .illustrator_icon { display: block; width: 64px; height: 64px; background: url("../images/portfolio_index_project_icon_ai.svg") no-repeat center; background-size: cover; }
+	section.profile_02 .tool_icon .photoshop_icon { display: block; width: 64px; height: 64px; background: url("../images/portfolio_index_project_icon_psd.svg") no-repeat center; background-size: cover; }
+
+	section.profile_02 .inner_wrap .tool_info { display: flex; justify-content: space-evenly; }
+	section.profile_02 .inner_wrap .tool_info > dl { width: 30%; }
+
+	.t_info_title { position: relative; font-family: "Impact"; letter-spacing: 1px; }
+	.t_info_title span { overflow: hidden; display: block; width: 13em; height: 3em; background: #424D5E; border-radius: 999px; margin: 0 auto 2em; line-height: 3; color: #fff; font-size: 1.5em; }
+	.t_info_title span::before { content: ""; width: 0; height: 0; position: absolute; left: 50%; top: 100%; transform: translate(-50%, -50%); border: 20px solid transparent; border-bottom-width: 0; border-top-color: #424D5E; }
+
+	.t_info_tool { padding-bottom: 30px; color: #FF9600; }
+
+	.t_info_txt { line-height: 1.5; text-align: left; }
+	
+
+	/*section.project*/
+
+	section.project { display: flex; flex-direction: column; gap: 30px; background: #424D5E; color: #fff; height: 100vh; }
+	
+	section.project .inner_wrap { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+
+	section.project .project_btn { height: 35px; display: flex; justify-content: center; gap: 30px; }
+	
+	section.project .project_btn button { position: relative; width: 12em; height: 2em; line-height: 2; text-align: center; }
+	section.project .project_btn button.active span { overflow: hidden; display: block; width: 12em; height: 2em; background: #FFAA00; border-radius: 999px; color: #fff; }
+	section.project .project_btn button.active::before { content: ""; width: 0; height: 0; position: absolute; left: 50%; top: 100%; transform: translate(-50%, -50%); border: 20px solid transparent; border-bottom-width: 0; border-top-color: #FFAA00; }
+
+	section.project .project_display { position: relative; display: block; width: 100%; height: 100%; }
+	section.project .project_display > .slides { position: absolute; left: 0; top: 0; margin: 0 auto; display: none; width: 100%; height: 100%; }
+	section.project .project_display > .slides[class ~= "active"] { display: block; }
+	section.project .project_display > .slides img { display: block; width: 100%; height: 100%; object-fit: contain; }
+	section.project .project_display > .slides .project_title { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 10em; line-height: 1; font-family: "Impact"; letter-spacing: 10px; }
+	section.project .project_display > .slides .project_act { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); }
+	section.project .project_display > .slides .project_act > button { margin: 0 3em; }
+
+
+	/*section.artwork*/
+
+	section.artwork { padding: 0px; }
+
+	section.artwork h2 { padding-top: 100px; position: absolute; left: 50%; top: 0; transform: translateX(-50%); color: #FFF; }
+	section.artwork .inner_wrap { flex: 1; display: flex; flex-direction: column; max-width: 100%; height: 100vh; }
+
+	section.artwork .artwork_wrap { position: relative; display: block; width: 100%; height: 100%; }
+	section.artwork .artwork_wrap > .slides { position: absolute; left: 0; top: 0; margin: 0 auto; opacity: 0; width: 100%; height: 100%; }
+	section.artwork .artwork_wrap > .slides img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+	section.artwork .artwork_wrap > .slides[class ~= "cur"] { opacity: 1; width: 42%; max-width: 800px; left: 50%; transform: translateX(-50%); z-index: 10; }
+	section.artwork .artwork_wrap > .slides[class ~= "next"] { opacity: 1; width: 30%; max-width: 600px; right: 50%; z-index: 5; transform: scale(0.9); }
+	section.artwork .artwork_wrap > .slides[class ~= "prev"] { opacity: 1; width: 30%; max-width: 600px; right: -50%; z-index: 5; transform: scale(0.9); }
+	section.artwork .artwork_wrap > .slides[class ~= "prev_02"] { opacity: 1; width: 20%; max-width: 400px; right: 80%; z-index: 3; transform: scale(0.7); }
+	section.artwork .artwork_wrap > .slides[class ~= "prev_03"] { opacity: 1; width: 20%; max-width: 400px; left: 80%; z-index: 3; transform: scale(0.7); }
+
+	section.artwork .artwork_act { position: absolute; left: 50%; bottom: 100px; transform: translateX(-50%); z-index: 15; }
+	section.artwork .pagination { position: absolute; left: 0; bottom: 20px; z-index: 20; width: 100%; text-align: center; }
+
+	section.artwork .dir_btns { display: inline-block; position: absolute; z-index: 30; width: 10%; max-width: 100px; height: 100%; }
+	section.artwork .dir_btns[class ~= "prev"] { left: 22%; }
+	section.artwork .dir_btns[class ~= "next"] { right: 22%; }
+	section.artwork .dir_btns > span { position: absolute; left: 0; top: 0; right: 0; bottom: 0; max-height: 50px; margin: auto; }
+
+
+
+
+	/*footer*/
+
+	footer { width: 100%; height: 50%; max-height: 500px; background: #424D5E; padding: 0 5em; }
+
+	footer .inner_wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3em; height: 100%; }
+	footer .footer_txt { color: #fff; font-family: "titan_one"; font-size: 3em; }
+	footer .footer_logo { display: inline-block; width: 50px; height: 40px; background: url("../images/portfolio_index_footer_icon.svg") no-repeat center; background-size: cover; }
+
+
+}
+
+
+/* ----------- Desktop (end) ----------- */
+
+
+/* ---------- Tablet (start) ---------- */
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	section { padding: 50px 0; }
+
+
+	/*header*/
+
+	header { position: fixed; z-index: 100; }
+	header::before { content: ""; display: none; position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; z-index: 101; background: rgba(0,0,0,0.5); }
+	header.on::before { display: block; }
+
+	header nav { position: fixed; left: 100%; top: 0; z-index: 105; width: 70vw; height: 100vh; padding: 100px 0; background: #424D5E; border-radius: 100px 0 0 100px; transform: translateX(0%); transition: transform 0.2s; }
+	header.on nav { transform: translateX(-100%); }
+
+	header button.btn_menu { display: block; position: fixed; right: 100%; top: 50%; transform: translateY(-50%); z-index: 110; width: 60px; height: 150px; background: #424D5E; border-radius: 20px 0 0 20px; }
+	header button.btn_menu::before { content: ""; display: block; position: fixed; right: 2vw; top: 50%; transform: translateY(-50%) translateX(0%); transition: transform 0.2s; z-index: 110; width: 32px; height: 32px; background: url("../images/index_menu_btn(close).png") no-repeat center; background-size: cover; }
+
+	header.on button.btn_menu { right: 69.5vw; }
+	header.on button.btn_menu::before { content: ""; display: block; position: fixed; right: 1.8vw; top: 50%; transform: translateY(-50%); z-index: 110; width: 32px; height: 32px; background: url("../images/index_menu_btn(open).png") no-repeat center; background-size: cover; }
+
+	header nav > ul { display: flex; flex-direction: column; justify-content: center; gap: 30px; width: 100%; height: 100%; }
+	header nav > ul > li { padding: 0 20%; }
+	header nav > ul > li > button { display: block; position: relative; width: 100%; height: 3em; color: #fff; line-height: 3; font-family: "MyriadPro-SemiExt"; font-size: 2em; text-align: right; }
+	header nav > ul > li > button:active { font-family: "MyriadPro-BlackIt"; color: #FFAA00; }
+	header nav > ul > li > button > .text { padding-right: 35%; }
+	header nav > ul > li > button > .icon { display: block; width: 30px; height: 30px; background: url("../images/portfolio_index_footer_icon.svg") no-repeat center; background-size: contain; position: absolute; right: 15%; top: 50%; transform: translateY(-50%); }
+
+
+
+
+
+}
+
+
+/* ----------- Tablet (end) ----------- */
+
+
+/* ---------- Mobile (start) ---------- */
+
+
+@media screen and (max-width: 767px) {
+
+
+
+}
+
+
+/* ----------- Mobile (end) ----------- */

@@ -1,0 +1,691 @@
+<!DOCTYPE HTML>
+<html lang='ko'>
+<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Namu</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+	<style>
+	</style>
+
+	<script>
+
+
+//데스크탑_마이메뉴
+
+		document.addEventListener('DOMContentLoaded', function() {
+			var menuButton = document.querySelector('.btn_menu');
+			var userMenu = document.querySelector('.usermenu');
+
+			menuButton.addEventListener('click', function(event) {
+				userMenu.classList.toggle('active');
+				this.classList.toggle('active');
+				event.stopPropagation();
+			});
+
+			document.addEventListener('click', function(event) {
+				if (userMenu.classList.contains('active') && !menuButton.contains(event.target) && !userMenu.contains(event.target)) {
+					userMenu.classList.remove('active');
+					menuButton.classList.remove('active');
+				}
+			});
+		});
+
+//태블릿_메뉴
+
+		document.addEventListener('DOMContentLoaded', function() {
+		  const btnMenu = document.querySelector('.btn_menu');
+		  const header = document.querySelector('header');
+		  const btnNavs = document.querySelectorAll('nav .btn_nav');
+		  const navLis = document.querySelectorAll('nav ul > li');
+
+		  btnMenu.addEventListener('click', function() {
+			if (window.matchMedia('(min-width: 768px) and (max-width: 1024px)').matches) {
+			  if (header.classList.contains('on')) {
+				navLis.forEach(li => li.classList.remove('active'));
+			  }
+			  header.classList.toggle('on');
+			}
+		  });
+
+		  btnNavs.forEach(function(btnNav) {
+			btnNav.addEventListener('click', function(event) {
+			  const parentLi = event.currentTarget.parentNode;
+			  
+			  btnNavs.forEach(function(otherBtnNav) {
+				if (otherBtnNav !== btnNav) {
+				  otherBtnNav.parentNode.classList.remove('active');
+				}
+			  });
+			  
+			  parentLi.classList.toggle('active');
+			});
+		  });
+		});
+
+//모바일_메뉴
+
+		document.addEventListener('DOMContentLoaded', function() {
+		  const btnMenu = document.querySelector('.btn_menu');
+		  const header = document.querySelector('header');
+		  const btnNavs = document.querySelectorAll('nav .btn_nav');
+		  const navLis = document.querySelectorAll('nav ul > li');
+
+		  btnMenu.addEventListener('click', function() {
+			if (window.matchMedia('(max-width: 767px)').matches) {
+			  if (header.classList.contains('on')) {
+				navLis.forEach(li => li.classList.remove('active'));
+			  }
+			  header.classList.toggle('on');
+			}
+		  });
+
+		  btnNavs.forEach(function(btnNav) {
+			btnNav.addEventListener('click', function(event) {
+			  const parentLi = event.currentTarget.parentNode;
+			  
+			  btnNavs.forEach(function(otherBtnNav) {
+				if (otherBtnNav !== btnNav) {
+				  otherBtnNav.parentNode.classList.remove('active');
+				}
+			  });
+			  
+			  parentLi.classList.toggle('active');
+			});
+		  });
+		});
+
+
+
+
+	</script>
+
+ </head>
+
+ <body>
+
+
+	<header>
+
+		<div class="inner_wrap">
+			<h1 class="logo"><a href="index.html"><span class="L_title">THE NAMU</span><br><span class="s_title">Private Hotel</span></a></h1>
+			<nav>
+				<ul class="clearfix">
+					<li>
+						<button class="btn_nav">ABOUT</button>
+						<ul class="sub">
+							<li><a href="#"><span>THE NAMU 소개</span></a></li>
+							<li><a href="#"><span>오시는 길</span></a></li>
+							<li><a href="#"><span>어메니티</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav">ROOM TYPE</button>
+						<ul class="sub">
+							<li><a href="#"><span>POOLVILLA</span></a></li>
+							<li><a href="#"><span>NAMU (나무 동)</span></a></li>
+							<li><a href="#"><span>TTEUL (들판 동)</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav">SPECIAL</button>
+						<ul class="sub">
+							<li><a href="#"><span>프라이빗 온수풀</span></a></li>
+							<li><a href="#"><span>애견 수영장</span></a></li>
+							<li><a href="#"><span>드라이룸</span></a></li>
+							<li><a href="#"><span>THE NAMU 마켓</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav">THE GRU</button>
+						<ul class="sub">
+							<li><a href="#"><span>파인 다이닝</span></a></li>
+							<li><a href="#"><span>조식 패키지</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav">RESERVATION</button>
+						<ul class="sub">
+							<li><a href="#"><span>실시간 예약</span></a></li>
+							<li><a href="#"><span>예약 안내</span></a></li>
+						</ul>
+					</li>
+					<li>
+						<button class="btn_nav">CONTACT</button>
+						<ul class="sub">
+							<li><a href="#"><span>문의하기</span></a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div class="login_bar">
+				<button class="btn_menu"><span class="blind">My Menu</span></button>
+				<div class="usermenu" id="userMenu">
+					<p>MY MEMU</p>
+					<hr class="short">
+					<ul>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">예약 확인</a></li>
+						<li><a href="#">마켓 오더</a></li>
+						<li class="usermenu_bottom"><a href="#">LOG IN/OUT</a></li>
+						<li class="usermenu_bottom"><a href="#">회원가입</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	
+	</header>
+
+
+	<section class="visual">
+
+		<h2 class="blind">visual</h2>
+
+		<div class="slides cur slides_01">
+			<picture>
+				<source srcset="images/thenamu_index_visual_D_01.jpg" media="(min-width: 1025px)">
+				<source srcset="images/thenamu_index_visual_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+				<source srcset="images/thenamu_index_visual_M_01.jpg" media="(max-width: 767px)">
+				<img src="images/thenamu_index_visual_D_01.jpg" alt="들판에서 강아지를 쓰다듬고 있는 남자와 웃고있는 강아지.">
+			</picture>
+			<div class="info_wrap">
+				<h3>BE<br><span>HAPPY</span></h3>
+				<p class="desc desk_txt tablet_txt">“ THE NAMU가 당신의 특별한 행복이 됩니다. ”</p>
+				<p class="desc mobile_txt">“ THE NAMU가<br>당신의 특별한 행복이 됩니다. ”</p>
+			</div>
+		</div>
+
+		<div class="slides next slides_02">
+			<picture>
+				<source srcset="images/thenamu_index_visual_D_02.jpg" media="(min-width: 1025px)">
+				<source srcset="images/thenamu_index_visual_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+				<source srcset="images/thenamu_index_visual_M_02.jpg" media="(max-width: 767px)">
+				<img src="images/thenamu_index_visual_D_02.jpg" alt="햇빛이 비쳐 들어오는 창가에서 컴퓨터를 하고 있는 남자.">
+			</picture>
+			<div class="info_wrap">
+				<h3>WITH<br><span>YOUR LOVE</span></h3>
+				<p class="desc desk_txt tablet_txt">“ 당신의 사랑과 특별한 시간을 만드세요. ”</p>
+				<p class="desc mobile_txt">“ 당신의 사랑과<br>특별한 시간을 만드세요. ”</p>
+			</div>
+		</div>
+
+		<div class="slides prev slides_03">
+			<picture>
+				<source srcset="images/thenamu_index_visual_D_03.jpg" media="(min-width: 1025px)">
+				<source srcset="images/thenamu_index_visual_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+				<source srcset="images/thenamu_index_visual_M_03.jpg" media="(max-width: 767px)">
+				<img src="images/thenamu_index_visual_D_03.jpg" alt="어스름 속에서 숙소의 모습.">
+			</picture>
+			<div class="info_wrap">
+				<h3>THE<br><span>NAMU</span></h3>
+				<p class="desc desk_txt tablet_txt">“ 도심 속 메말라버린 당신의 감성을 찾으세요.”</p>
+				<p class="desc mobile_txt">“ 도심 속 메말라버린<br>당신의 감성을 찾으세요.”</p>
+			</div>
+		</div>
+
+		<div class="pagination">
+			<button class="active"><span><span class="blind">slide 01 button</span></span></button><!--
+		 --><button><span><span class="blind">slide 02 button</span></span></button><!--
+		 --><button><span><span class="blind">slide 03 button</span></span></button>
+		</div>
+
+		<button class="dir_btns prev _bg_W"><span><span class="blind">prev button</span></span></button>
+		<button class="dir_btns next _bg_W"><span><span class="blind">next button</span></span></button>
+
+	</section>
+
+
+	<section class="reservation">
+
+		<h2 class="sub_title sub_title_L">RESERVATION</h2>
+		<p class="sub_title sub_title_S">실시간 예약</p>
+
+		<div class="inner_wrap">
+
+			<div class="roomtype_wrap">
+				<ul class="custom_dropdown">
+					<li><span>Room Type</span>
+						<ul class="sub">
+							<li>POOLVILLA</li>
+							<li>NAMU</li>
+							<li>TTEUL</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="check_wrap">
+				<ul class="custom_dropdown">
+					<li>Check-In
+						<ul class="sub">
+							<li>2024.03.01</li>
+							<li>2024.03.02</li>
+							<li>2024.03.03</li>
+						</ul>
+					</li>
+
+					<li>Check-Out
+						<ul class="sub">
+							<li>2024.03.01</li>
+							<li>2024.03.02</li>
+							<li>2024.03.03</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="customer_wrap">
+				<ul class="custom_dropdown">
+					<li>ADULT
+						<ul class="sub">
+							<li>1명</li>
+							<li>2명</li>
+							<li>3명</li>
+							<li>4명</li>
+						</ul>
+					</li>
+
+					<li>CHILD
+						<ul class="sub">
+							<li>1명</li>
+							<li>2명</li>
+						</ul>
+					</li>
+					<li>PET
+						<ul class="sub">
+							<li>대형견</li>
+							<li>소형견</li>
+							<li>고양이</li>
+						</ul>
+					</li>
+
+				</ul>
+			</div>
+
+			<input class="btn_search" type="submit" value="Search">
+
+		</div>
+
+		<!--
+		<div class="inputs_wrap">
+			<form name="reservation" action="#" method="post">
+
+				<div class="roomtype_wrap">
+					<label for="roomtype">Room Type</label>
+					<select id="roomtype">
+						<option value=""></option>
+						<option value="POOLVILLA">POOLVILLA</option>
+						<option value="NAMU">NAMU</option>
+						<option value="TTEUL">TTEUL</option>
+					</select>
+				</div>
+
+				<div class="check_wrap">
+					<label for="check_in">Check-In</label><input type="date" id="check_in">
+					<label id="check_out">Check-Out</label><input type="date" id="check_out">
+				</div>
+
+				<div class="customer_wrap">
+					<label for="adult">ADULT</label>
+					<select id="adult">
+						<option value=""></option>
+						<option value="1명">1명</option>
+						<option value="2명">2명</option>
+						<option value="3명">3명</option>
+						<option value="4명">4명</option>
+					</select>
+					<label for="child">CHILD</label>
+					<select id="child">
+						<option value=""></option>
+						<option value="1명">1명</option>
+						<option value="2명">2명</option>
+					</select>
+					<label for="pet">PET</label>
+					<select id="pet">
+						<option value=""></option>
+						<optgroup label="DOG">
+							<option value="대형견">대형견</option>
+							<option value="소형견">소형견</option>
+						</optgroup>
+						<optgroup label="CAT">
+							<option value="고양이">고양이</option>
+						</optgroup>
+					</select>
+				</div>
+
+				<div class="submit_wrap">
+					<input class="btn_search" type="submit" value="Search">
+				</div>
+
+			</form>
+		</div>
+		-->
+
+	</section>
+
+
+
+	<section class="roomtype">
+
+		<h2 class="sub_title sub_title_L">ROOM TYPE</h2>
+		<p class="sub_title sub_title_S">룸 타입</p>
+
+		<div class="inner_wrap">
+
+			<div class="slides cur room_01">
+				<picture>
+					<source srcset="images/thenamu_index_room_D_01.jpg" media="(min-width: 1025px)">
+					<source srcset="images/thenamu_index_room_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+					<source srcset="images/thenamu_index_room_M_01.jpg" media="(max-width: 767px)">
+					<img src="images/thenamu_index_room_D_01.jpg" alt="개인 수영장이 딸린 풀빌라 전경 사진">
+				</picture>
+				<div class="room_desc _R">
+					<h3 class="room_title">Private Poolvilla━</h3>
+					<p class="desk_txt tablet_txt">숲속의 고즈넉한 휴식을 위해 지어진 '프라이빗 풀빌라'는 호두나무와 모던한 디자인으로 편안한 경험을 제공합니다.<br><br>50평 이상의 단독 별장형 규모와 프라이빗 수영장이 선사하는 여유로움을 즐기실 수 있습니다.</p>
+					<p class="mobile_txt">숲속의 고즈넉한 휴식을 위해 지어진 '프라이빗 풀빌라'는 편안한 숙박 경험을 제공합니다.<p>
+					<a href="#" class="btn_more style_01 style_01_R">view more</a>
+				</div>
+			</div>
+
+			<div class="slides next room_02">
+				<picture>
+					<source srcset="images/thenamu_index_room_D_02.jpg" media="(min-width: 1025px)">
+					<source srcset="images/thenamu_index_room_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+					<source srcset="images/thenamu_index_room_M_02.jpg" media="(max-width: 767px)">
+					<img src="images/thenamu_index_room_D_02.jpg" alt="한옥 느낌으로 지어진 나무방">
+				</picture>
+				<div class="room_desc _L">
+					<h3 class="room_title">━THE NAMU</h3>
+					<p class="desk_txt tablet_txt">석양이 아름다운 언덕 위, 연인산의 포근함을 담고 있는 힐링 스팟 '나무'입니다.<br><br>나무를 베이스로한 모던한 인테리어와 다양한 방향으로 펼쳐진 테라스가 있어 용추계곡과 연인산이 보이는 멋진 객실입니다.</p>
+					<p class="mobile_txt">석양이 아름다운 언덕 위, 연인산의 포근함을 담고 있는 힐링 스팟 '나무'입니다.<p>
+					<a href="#" class="btn_more style_01 style_01_L">view more</a>
+				</div>
+			</div>
+
+			<div class="slides prev room_03">
+				<picture>
+					<source srcset="images/thenamu_index_room_D_03.jpg" media="(min-width: 1025px)">
+					<source srcset="images/thenamu_index_room_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+					<source srcset="images/thenamu_index_room_M_03.jpg" media="(max-width: 767px)">
+					<img src="images/thenamu_index_room_D_03.jpg" alt="소박한 디자인으로 깔끔하게 지어진 방과 커다란 창문">
+				</picture>
+				<div class="room_desc _R">
+					<h3 class="room_title">THE TTEUL━</h3>
+					<p class="desk_txt tablet_txt">'뜰'은 소박하지만 나무 향이 가득한 인테리어로 정겨운 편안함을 제공합니다.<br><br>예쁜 정원에서 반려견과 행복한 시간을 보내거나, 확트인 전면 창을 통해서 자연 풍경을 즐기실 수 있는 객실입니다.</p>
+					<p class="mobile_txt">'더 뜰'은 소박하지만 나무 향이 가득한 인테리어로 정겨운 편안함을 제공합니다.<p>
+					<a href="#" class="btn_more style_01 style_01_R">view more</a>
+				</div>
+			</div>
+
+			<div class="pagination">
+				<button class="active"><span><span class="blind">slide 01 button</span></span></button><!--
+			 --><button><span><span class="blind">slide 02 button</span></span></button><!--
+			 --><button><span><span class="blind">slide 03 button</span></span></button>
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<section class="content">
+
+		<h2 class="sub_title sub_title_L">SPECIAL CONTENT</h2>
+		<p class="sub_title sub_title_S">편의시설</p>
+			
+		<div class="inner_wrap">
+
+			<div class="market">
+
+				<div class="slides cur">
+					<a href="#">
+						<div class="txt_box">
+							<h3 class="cont_title">THE NAMU MARKET</h3>
+							<p class="cont_desc desk_txt tablet_txt">THE NAMU MARKET을 통하여<br>가장 완벽한 호캉스를 즐겨보세요.</p>
+							<p class="cont_desc desk_txt tablet_txt mobile_txt">＊ 더 나무 회원가입 필요<br>＊ 24시간 연중무휴</p>
+						</div>
+						<picture>
+							<source srcset="images/thenamu_index_market_D_01.jpg" media="(min-width: 1025px)">
+							<source srcset="images/thenamu_index_market_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/thenamu_index_market_M_01.jpg" media="(max-width: 767px)">
+							<img src="images/thenamu_index_market_D_01.jpg" alt="유기농 마트 입구 사진">
+						</picture>
+					</a>
+				</div>
+
+				<div class="slides next">
+					<a href="#">
+						<div class="txt_box">
+							<h3 class="cont_title">THE NAMU MARKET</h3>
+							<p class="cont_desc desk_txt tablet_txt">THE NAMU MARKET을 통하여<br>가장 완벽한 호캉스를 즐겨보세요.</p>
+							<p class="cont_desc desk_txt tablet_txt mobile_txt">＊ 더 나무 회원가입 필요<br>＊ 24시간 연중무휴</p>
+						</div>
+						<picture>
+							<source srcset="images/thenamu_index_market_D_02.jpg" media="(min-width: 1025px)">
+							<source srcset="images/thenamu_index_market_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/thenamu_index_market_M_02.jpg" media="(max-width: 767px)">
+							<img src="images/thenamu_index_market_D_02.jpg" alt="유기농 마트에서 쇼핑을 하는 여성 사진">
+						</picture>
+					</a>
+				</div>
+
+				<div class="slides prev">
+					<a href="#">
+						<div class="txt_box">
+							<h3 class="cont_title">THE NAMU MARKET</h3>
+							<p class="cont_desc desk_txt tablet_txt">THE NAMU MARKET을 통하여<br>가장 완벽한 호캉스를 즐겨보세요.</p>
+							<p class="cont_desc desk_txt tablet_txt mobile_txt">＊ 더 나무 회원가입 필요<br>＊ 24시간 연중무휴</p>
+						</div>
+						<picture>
+							<source srcset="images/thenamu_index_market_D_03.jpg" media="(min-width: 1025px)">
+							<source srcset="images/thenamu_index_market_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/thenamu_index_market_M_03.jpg" media="(max-width: 767px)">
+							<img src="images/thenamu_index_market_D_03.jpg" alt="유기농 마트 진열대 사진">
+						</picture>
+					</a>
+				</div>
+
+				<div class="pagination">
+					<button class="active"><span><span class="blind">slide 01 button</span></span></button><!--
+				 --><button><span><span class="blind">slide 02 button</span></span></button><!--
+				 --><button><span><span class="blind">slide 03 button</span></span></button>
+				</div>
+			</div>
+
+			<div class="content_box">
+				<div class="pool">
+					<a href="#">
+						<div class="txt_box">
+							<h3 class="cont_title">THE POOL</h3>
+							<p class="cont_desc desk_txt tablet_txt">견주님의 반려동물과 함께<br>THR POOL에서 즐거운 물놀이를 즐기세요.</p>
+							<p class="cont_desc desk_txt tablet_txt">＊ 숙박객 무료<br>＊ 비숙박객 1일권 30,000원<br>＊ 운영 기간 : 6월 ~ 10월</p>
+							<p class="cont_desc mobile_txt">＊ 비숙박객 1일권 30,000원<br>＊ 운영 기간 : 6월 ~ 10월</p>
+						</div>
+						<picture>
+							<source srcset="images/thenamu_index_pool_D.jpg" media="(min-width: 1025px)">
+							<source srcset="images/thenamu_index_pool_T.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/thenamu_index_pool_M.jpg" media="(max-width: 767px)">
+							<img src="images/thenamu_index_pool_D.jpg" alt="아이와 함께 뛰어노는 강아지">
+						</picture>
+					</a>
+				</div>
+
+				<div class="dryroom">
+					<a href="#">
+						<div class="txt_box">
+							<h3 class="cont_title">DRY ROOM</h3>
+							<p class="cont_desc desk_txt tablet_txt">즐거운 물놀이 후 견주님과 반려동물의<br>편안한 휴식을 위한 드라이룸이 준비되어 있습니다.</p>
+							<p class="cont_desc desk_txt tablet_txt mobile_txt">＊ 1회 10,000원<br>＊ 운영 기간 : 6월 ~ 10월</p>
+						</div>
+						<picture>
+							<source srcset="images/thenamu_index_dry_D.jpg" media="(min-width: 1025px)">
+							<source srcset="images/thenamu_index_dry_T.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+							<source srcset="images/thenamu_index_dry_M.jpg" media="(max-width: 767px)">
+							<img src="images/thenamu_index_dry_D.jpg" alt="드라이룸을 이용하는 강아지">
+						</picture>
+					</a>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<section class="gru">
+
+		<h2 class="sub_title sub_title_L">THE GRU</h2>
+		<p class="sub_title sub_title_S">파인 다이닝 더 그루</p>
+		
+		<div class="inner_wrap">
+
+			<div class="visual_img">
+
+				<div class="slides cur">
+					<picture>
+						<source srcset="images/thenamu_index_thegru_D_01.jpg" media="(min-width: 1025px)">
+						<source srcset="images/thenamu_index_thegru_T_01.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/thenamu_index_thegru_M_01.jpg" media="(max-width: 767px)">
+						<img src="images/thenamu_index_thegru_D_01.jpg" alt="파인다이닝 에피타이저, 단호박 스프">
+					</picture>
+					<div class="info_wrap">
+						<h3>HUMAN<br>GRADE<br><span>for PUPPY</span></h3>
+					</div>
+				</div>
+
+				<div class="slides next">
+					<picture>
+						<source srcset="images/thenamu_index_thegru_D_02.jpg" media="(min-width: 1025px)">
+						<source srcset="images/thenamu_index_thegru_T_02.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/thenamu_index_thegru_M_02.jpg" media="(max-width: 767px)">
+						<img src="images/thenamu_index_thegru_D_02.jpg" alt="피크닉 세트">
+					</picture>
+					<div class="info_wrap">
+						<h3>OUTDOOR<br>PICNIC<br><span>with ORGANIC FOOD</span></h3>
+					</div>
+				</div>
+
+				<div class="slides prev">
+					<picture>
+						<source srcset="images/thenamu_index_thegru_D_03.jpg" media="(min-width: 1025px)">
+						<source srcset="images/thenamu_index_thegru_T_03.jpg" media="(min-width: 768px) and (max-width: 1024px)">
+						<source srcset="images/thenamu_index_thegru_M_03.jpg" media="(max-width: 767px)">
+						<img src="images/thenamu_index_thegru_D_03.jpg" alt="여름 한정, 야외 파인다이닝">
+					</picture>
+					<div class="info_wrap">
+						<h3>SUMMER<br>FINE DINING<br><span>in NATURE</span></h3>
+					</div>
+				</div>
+
+				<div class="pagination">
+					<button class="active"><span><span class="blind">slide 01 button</span></span></button><!--
+				 --><button><span><span class="blind">slide 02 button</span></span></button><!--
+				 --><button><span><span class="blind">slide 03 button</span></span></button>
+				</div>
+
+				<button class="dir_btns prev _bg_W"><span><span class="blind">prev button</span></span></button>
+				<button class="dir_btns next _bg_W"><span><span class="blind">next button</span></span></button>
+
+			</div>
+
+			<div class="visual_desc">
+				<div class="desc_01">
+					<div class="desc_icon"><span class="blind">티켓 아이콘</span></div>
+					<h4>RESERVATION<br>SYSTEM</h4>
+					<p class="desk_txt">당신만을 위한 100% 예약제 시스템<br>＊<br>THE GRU는 만족스럽고 차별화된 서비스를<br>제공하기 위하여 예약제 시스템으로 운영됩니다.<br>(운영 타임 별 최대 5팀 예약 가능)</p>
+					<p class="tablet_txt">당신만을 위한<br>100% 예약제 시스템<br>＊<br>차별화된 서비스 제공을 위하여<br>예약제 시스템으로 운영<br>(운영 타임 별 최대 5팀 예약 가능)</p>
+					<p class="mobile_txt">100% 예약제 시스템<br>당신만을 위한 서비스</p>
+					<a href="#" class="btn_more style_02">view more</a>
+				</div>
+
+				<div class="desc_02">
+					<div class="desc_icon"><span class="blind">음식 아이콘</span></div>
+					<h4>GUEST<br>DISCOUNT</h4>
+					<p class="desk_txt">THE NAMU 숙박 고객 대상, 할인 혜택 제공<br>＊<br>숙박 기간 중 THE GRU를 이용해주실 경우<br>최대 30%의 할인 혜택을 제공해드리며,<br>소정의 Gift를 제공해 드립니다.<br>(시즌 별 Gift 상시 변경)</p>
+					<p class="tablet_txt">THE NAMU 숙박 고객 대상<br>할인 혜택 제공<br>＊<br>최대 30%의 할인 혜택 및<br>소정의 Gift 제공<br>(시즌 별 Gift 상시 변경)</p>
+					<p class="mobile_txt">THE NAMU 숙박 고객 대상<br>할인 혜택 제공</p>
+					<a href="#" class="btn_more style_02">view more</a>
+				</div>
+
+				<div class="desc_03">
+					<div class="desc_icon"><span class="blind">뼈다귀 아이콘</span></div>
+					<h4>THE MUNG<br>for PUPPY</h4>
+					<p class="desk_txt">소중한 동반자를 위한, 100% 휴먼 그레이드 특식<br>*<br>THE GRU는 당신의 동반자를 함께 생각합니다.<br>천연 오가닉 식재료를 사용하여<br>반려견의 건강과 맛을 동시에 책임집니다.<br>(사전예약 必 )</p>
+					<p class="tablet_txt">소중한 동반자를 위한<br>100% 휴먼 그레이드 특식<br>*<br>천연 오가닉 식재료를 사용한<br>반려견 전용 메뉴 완비<br>(사전예약 必 )</p>
+					<p class="mobile_txt">소중한 동반자를 위한<br>100% 휴먼 그레이드 특식</p>
+					<a href="#" class="btn_more style_02">view more</a>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<section class="map">
+
+		<h2 class="sub_title sub_title_L">MAP</h2>
+		<p class="sub_title sub_title_S">오시는 길</p>
+		
+		<div class="inner_wrap">
+
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7493.29110219389!2d127.47364898817406!3d37.84763445651832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356327fc5b51bb4b%3A0xc4f270592c33b0ff!2z6rK96riw64-EIOqwgO2Pieq1sCDqsIDtj4nsnY0g7Jqp7LaU66GcMTcx67KI6ri4IDEwMA!5e0!3m2!1sko!2skr!4v1705395243799!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+			<div class="map_desc">
+				<div class="Trans _bus">
+					<p class="trans_tit">Public Transportation</p>
+					<p>대중교통을 이용하실 경우</p>
+					<p>가평역 버스 정류장에서 15번, 15-2번, 15-1번, 71-1번 버스 탑승→ 부대앞 정류장 하차 → THE NAMU 셔틀차량 탑승<br>(약 1시간 30분 소요)</p>
+				</div>
+
+				<div class="Trans _car">
+					<p class="trans_tit">Car</p>
+					<p>승용차로 오실 경우</p>
+					<p>경기도 가평군 가평읍 용추로171번길 100<br>(가평역에서 차량으로 약 15분 거리)</p>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+
+	<footer>
+
+		<div class="inner_wrap">
+
+			<p class="logo L_title">THE NAMU</p>
+
+			<div class="footer_sns">
+				<a href="https://twitter.com/" class="twitter"><span class="blind">twitter</span></a><!--
+			 --><a href="https://www.facebook.com/" class="facebook"><span class="blind">facebook</span></a><!--
+			 --><a href="https://www.instagram.com/" class="instargram"><span class="blind">instargram</span></a>
+			</div>
+
+			<div class="footer_desc">
+				<div class="desc_L">
+					<p><strong>E-Mail.</strong> thenamu@gmail.com</p>
+					<p><strong>Tel.</strong> 000-0000-0000</p>
+					<p><strong>Add.</strong> 경기도 가평군 가평읍 용추로171번길 100</p>
+				</div>
+				<div class="desc_R">
+					<p><strong>상호 :</strong> 더 나무</p>
+					<p><strong>대표자 :</strong> 송나무</p>
+					<p><strong>사업자번호 :</strong> 000-00-00000</p>
+				</div>
+			</div>
+
+		</div>
+
+	</footer>
+
+
+ </body>
+
+</html>

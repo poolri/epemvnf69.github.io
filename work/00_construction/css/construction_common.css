@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+/* ==========================================
+=============== common.css ==================
+================ (The Namu) =================
+========================================== */
+
+/* ######## font-face(start) ######## */
+
+/* noto-sans-kr-300 - cyrillic_korean_latin */
+@font-face {
+  font-family: 'NotoSansKR_300';
+  src: url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-300.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* noto-sans-kr-regular - cyrillic_korean_latin */
+@font-face {
+  font-family: 'NotoSansKR_400';
+  src: url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* noto-sans-kr-600 - cyrillic_korean_latin */
+@font-face {
+  font-family: 'NotoSansKR_600';
+  src: url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-600.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* noto-sans-kr-900 - cyrillic_korean_latin */
+@font-face {
+  font-family: 'NotoSansKR_900';
+  src: url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/noto-sans-kr-v36-cyrillic_korean_latin-900.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* anton-regular - latin */
+@font-face {
+  font-family: 'Anton';
+  src: url('../fonts/anton-v25-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/anton-v25-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* bungee-regular - latin */
+@font-face {
+  font-family: 'Bungee';
+  src: url('../fonts/bungee-v13-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../fonts/bungee-v13-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* ######### font-face(end) ######### */
+
+
+	.inner_wrap { position: relative; width: 100%; max-width: 1920px; height: 100vh; margin: 0 auto; text-align: center; }
+	.frist, .last { font-family: "Anton"; }
+	.middle { font-family: "Bungee"; }
+
+	section .inner_wrap p { font-family: "NotoSansKR_400"; }
+
+	.desc_txt, .tablet_txt { display: none; }
+	
+
+/* ---------- Desktop (start) ---------- */
+
+
+@media screen and (min-width: 1025px) {
+
+	body { color: #000; font-size: 16px; }
+	.desc_txt { display: block; }
+
+	section .inner_wrap .inner_box { position: relative; top: 50%; transform: translateY(-50%); }
+
+	section .inner_wrap .inner_box h1 { height: 100px; line-height: 100px; }
+	section .inner_wrap .inner_box h1::before { content: ""; width: 100px; height: 100px; background: url("../images/construction_logo.svg") no-repeat center; background-size: cover; position: absolute; top: -35%; left: 50%; transform: translateX(-50%); }
+	section .inner_wrap h1 .frist { font-size: 5em; vertical-align: middle; padding-right: 0.2em; }
+	section .inner_wrap h1 .last { font-size: 5em; vertical-align: middle; padding-left: 0.2em; }
+	section .inner_wrap h1 .middle { font-size: 4em; vertical-align: middle; }
+
+	section .inner_wrap p { color: #666; margin-top: 1em; }
+
+	.back_btn { position: relative; font-family: "Bungee"; width: 10em; height: 2em; text-align: center; line-height: 2em; margin: 2em auto; overflow: hidden; border-radius: 500px; }
+	.back_btn > a { position: relative; display: block; width: 100%; height: 100%; color: #000; transition: color 0.4s ease; z-index: 1; }
+	.back_btn > a:hover { color: #fff; }
+	.back_btn::before { content: ""; position: absolute; top: 0; left: 50%; width: 0%; height: 100%; background-color: #000; transition: width 0.4s ease, left 0.4s ease; z-index: 0; border-radius: 500px; }
+	.back_btn:hover::before { content: ""; width: 100%; left: 0; }
+
+}
+
+
+/* ----------- Desktop (end) ----------- */
+
+
+/* ---------- Tablet (start) ---------- */
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	body { color: #000; font-size: 14px; }
+	.tablet_txt { display: block; }
+
+	section .inner_wrap .inner_box { position: relative; top: 50%; transform: translateY(-50%); }
+
+	section .inner_wrap .inner_box h1 { height: 100px; line-height: 100px; }
+	section .inner_wrap .inner_box h1::before { content: ""; width: 100px; height: 100px; background: url("../images/construction_logo.svg") no-repeat center; background-size: cover; position: absolute; top: -40%; left: 50%; transform: translateX(-50%); }
+	section .inner_wrap h1 .frist { font-size: 5em; vertical-align: middle; padding-right: 0.2em; }
+	section .inner_wrap h1 .last { font-size: 5em; vertical-align: middle; padding-left: 0.2em; }
+	section .inner_wrap h1 .middle { font-size: 4em; vertical-align: middle; }
+
+	section .inner_wrap p { color: #666; margin-top: 1em; }
+
+	.back_btn { position: relative; font-family: "Bungee"; width: 10em; height: 2em; text-align: center; line-height: 2em; margin: 2em auto; overflow: hidden; border-radius: 500px; }
+	.back_btn > a { position: relative; display: block; width: 100%; height: 100%; color: #000; transition: color 0.4s ease; z-index: 1; }
+	.back_btn > a:active { color: #fff; }
+	.back_btn::before { content: ""; position: absolute; top: 0; left: 50%; width: 0%; height: 100%; background-color: #000; transition: width 0.4s ease, left 0.4s ease; z-index: 0; border-radius: 500px; }
+	.back_btn:active::before { content: ""; width: 100%; left: 0; }
+
+
+
+}
+
+
+/* ----------- Tablet (end) ----------- */
+
+
+/* ---------- Mobile (start) ---------- */
+
+
+@media screen and (max-width: 767px) {
+	
+	body { color: #000; font-size: 14px; }
+
+	section .inner_wrap .inner_box { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; }
+
+	section .inner_wrap .inner_box h1 { text-transform: uppercase; writing-mode: vertical-rl; margin: 0; }
+	section .inner_wrap h1 .frist { font-size: 3em; vertical-align: middle; padding-right: 0.2em; }
+	section .inner_wrap h1 .last { font-size: 3em; vertical-align: middle; padding-left: 0.2em; }
+	section .inner_wrap h1 .middle { font-size: 2em; vertical-align: middle; }
+
+	section .inner_wrap .inner_box h1::before { content: ""; width: 80px; height: 80px; background: url("../images/construction_logo.svg") no-repeat center; background-size: cover; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+
+	.back_btn { position: relative; font-family: "Bungee"; width: 10em; height: 2em; text-align: center; line-height: 2em; margin: 3em auto; overflow: hidden; border-radius: 500px; }
+	.back_btn > a { position: relative; display: block; width: 100%; height: 100%; color: #000; transition: color 0.4s ease; z-index: 1; }
+	.back_btn > a:active { color: #fff; }
+	.back_btn::before { content: ""; position: absolute; top: 0; left: 50%; width: 0%; height: 100%; background-color: #000; transition: width 0.4s ease, left 0.4s ease; z-index: 0; border-radius: 500px; }
+	.back_btn:active::before { content: ""; width: 100%; left: 0; }
+
+}
+
+
+/* ----------- Mobile (end) ----------- */

@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+/* ==========================================
+=============== common.css ==================
+============= (MOTHER NATURE) ===============
+========================================== */
+
+/* ######## font-face(start) ######## */
+
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Thin';
+    src: url('../font/SpoqaHanSansNeo-Thin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('../font/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Impact';
+    src: url('../font/Impact.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MyriadPro-BlackCondIt';
+    src: url('../font/MyriadPro-BlackCondIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BlackSemiCnIt';
+    src: url('../font/MyriadPro-BlackSemiCnIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BlackSemiExt';
+    src: url('../font/MyriadPro-BlackSemiExt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-Bold';
+    src: url('../font/MyriadPro-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BoldSemiCnIt';
+    src: url('../font/MyriadPro-BoldSemiCnIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('../font/MyriadPro-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-Semibold';
+    src: url('../font/MyriadPro-Semibold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-SemiExt';
+    src: url('../font/MyriadPro-SemiExt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BlackIt';
+    src: url('../font/MyriadPro-BlackIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BoldSemiExt';
+    src: url('../font/MyriadPro-BoldSemiExt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BoldSemiExtIt';
+    src: url('../font/MyriadPro-BoldSemiExtIt.otf') format('opentype');
+}
+@font-face {
+    font-family: 'MyriadPro-BlackSemiExtIt';
+    src: url('../font/MyriadPro-BlackSemiExtIt.otf') format('truetype');
+}
+
+/* ######### font-face(end) ######### */
+
+
+
+
+	/*디바이스 별 노출 여부*/
+	.desk_txt { display: none; }
+	.tablet_txt { display: none; }
+	.mobile_txt { display: none; }
+
+
+	body { font-family: "SpoqaHanSansNeo-Regular"; margin: 0 auto; width: 100%; height: 100vh; }
+	section { position: relative; padding: 80px 0; }
+	.inner_wrap { position: relative; width: 100%; max-width: 1320px; margin: 0 auto; /*border: 1px solid pink;*/ }
+	
+
+
+
+/* ---------- Desktop (start) ---------- */
+
+
+@media screen and (min-width: 1025px) {
+
+	.desk_txt { display: inline-block; }
+
+	
+}
+
+
+/* ----------- Desktop (end) ----------- */
+
+
+/* ---------- Tablet (start) ---------- */
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+	.tablet_txt { display: inline-block; }
+
+
+}
+
+
+/* ----------- Tablet (end) ----------- */
+
+
+/* ---------- Mobile (start) ---------- */
+
+
+@media screen and (max-width: 767px) {
+
+	.mobile_txt { display: inline-block; }
+	
+
+}
+
+
+/* ----------- Mobile (end) ----------- */
